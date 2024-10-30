@@ -25,7 +25,7 @@ for idx,algo in enumerate(all_submissions[0:1]):
         inst = PanaromaStitcher()
 
         ###
-        for impaths in sorted(glob.glob(path))[1:2]:
+        for impaths in sorted(glob.glob(path))[0:2]:
             print('\t\t Processing... {}'.format(impaths))
             stitched_image, homography_matrix_list = inst.make_panaroma_for_images_in(path=impaths)
 
