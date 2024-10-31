@@ -42,11 +42,11 @@ class matchers:
 			return None
 
 	def homography_matrix_with_ransac(self, query_pts, train_pts):
-			threshold = 10 
+			threshold = 3
 			best_inliers = []
 			best_H = None
 			pts_arr = list(zip(query_pts, train_pts))
-			for _ in range(250):
+			for _ in range(200):
 				
 				pts = random.choices(pts_arr, k = 4)
 				# print(f'four random points {pts}')

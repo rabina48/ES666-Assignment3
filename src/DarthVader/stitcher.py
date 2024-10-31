@@ -17,18 +17,18 @@ class PanaromaStitcher:
 			self.scale_factor = scale_factor
 	
 		
-		# def resize_images(self, images, scale_factor=0.2):
-		# 	"""
-		# 	Resizes a list of images based on a specified scale factor.
+	def resize_images(self, images, scale_factor=0.2):
+			"""
+			Resizes a list of images based on a specified scale factor.
 			
-		# 	:param images: List of images to be resized.
-		# 	:param scale_factor: The scale factor to resize images. Can be 0.25, 0.5, or 0.75.
-		# 	:return: List of resized images.
-		# 	"""
-		# 	# if scale_factor not in [0.25, 0.5, 0.75]:
-		# 	# 	raise ValueError("Invalid scale_factor. Choose from 0.25, 0.5, 0.75, or 1.0.")
+			:param images: List of images to be resized.
+			:param scale_factor: The scale factor to resize images. Can be 0.25, 0.5, or 0.75.
+			:return: List of resized images.
+			"""
+			if scale_factor not in [0.25, 0.5, 0.75]:
+				raise ValueError("Invalid scale_factor. Choose from 0.25, 0.5, 0.75, or 1.0.")
 			
-		# 	return [cv2.resize(img, None, fx=scale_factor, fy=scale_factor, interpolation=cv2.INTER_LINEAR) for img in images]
+			return [cv2.resize(img, None, fx=scale_factor, fy=scale_factor, interpolation=cv2.INTER_LINEAR) for img in images]
 		
 	def load_and_resize_images(self, image_paths):
 			"""Loads and resizes images from the given paths."""
