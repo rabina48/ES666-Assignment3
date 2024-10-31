@@ -13,7 +13,7 @@ path = 'Images{}*'.format(os.sep)  # Use os.sep, Windows, linux have different p
 
 all_submissions = glob.glob('./src/*')
 os.makedirs('./results/', exist_ok=True)
-for idx,algo in enumerate(all_submissions[0:1]):
+for idx,algo in enumerate(all_submissions):
     print('****************\tRunning Awesome Stitcher developed by: {}  | {} of {}\t********************'.format(algo.split(os.sep)[-1],idx,len(all_submissions)))
     try:
         module_name = '{}_{}'.format(algo.split(os.sep)[-1],'stitcher')
@@ -25,7 +25,7 @@ for idx,algo in enumerate(all_submissions[0:1]):
         inst = PanaromaStitcher()
 
         ###
-        for impaths in sorted(glob.glob(path))[0:2]:
+        for impaths in sorted(glob.glob(path)):
             print('\t\t Processing... {}'.format(impaths))
             stitched_image, homography_matrix_list = inst.make_panaroma_for_images_in(path=impaths)
 
